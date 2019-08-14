@@ -7,24 +7,24 @@
       "projectType": "application",
       "schematics": {},
       "root": "",
-      "sourceRoot": "src",
+      "sourceRoot": "src/ui",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/diabetes-analytics",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "outputPath": "dist/ui",
+            "index": "src/ui/index.html",
+            "main": "src/ui/main.ts",
+            "polyfills": "src/ui/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": false,
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "src/ui/favicon.ico",
+              "src/ui/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/ui/styles.css"
             ],
             "scripts": []
           },
@@ -32,8 +32,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "src/ui/environments/environment.ts",
+                  "with": "src/ui/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -80,16 +80,16 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
+            "main": "src/ui/test.ts",
+            "polyfills": "src/ui/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "src/ui/favicon.ico",
+              "src/ui/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/ui/styles.css"
             ],
             "scripts": []
           }
