@@ -6,11 +6,11 @@
 	<parent>
 		<groupId>de.meandmymac</groupId>
 		<artifactId>diabetes-analytics</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>${global.version}</version>
 	</parent>
 
 	<artifactId>diabetes-analytics.backend</artifactId>
-	<name>diabetes-analytics.backend</name>
+	<name>Diabetes Analytics Backend</name>
 	<description>Analytics for Diabetes Type 1 data; backend project.</description>
 
 	<properties>
