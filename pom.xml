@@ -12,8 +12,8 @@
     <description>Analytics for Diabetes Type 1 data</description>
 
     <modules>
-        <module>backend</module>
         <module>frontend</module>
+        <module>backend</module>
     </modules>
 
     <parent>
