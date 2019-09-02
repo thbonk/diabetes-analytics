@@ -16,6 +16,7 @@
 
   <properties>
     <frontend-maven-plugin.version>1.8.0</frontend-maven-plugin.version>
+    <node-js.version>v10.16.3</node-js.version>
   </properties>
 
   <build>
@@ -33,7 +34,7 @@
               <goal>install-node-and-npm</goal>
             </goals>
             <configuration>
-              <nodeVersion>v10.16.3</nodeVersion>
+              <nodeVersion>${node-js.version}</nodeVersion>
             </configuration>
           </execution>
           <!-- Install all project dependencies -->
