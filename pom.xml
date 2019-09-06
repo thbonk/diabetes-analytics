@@ -20,6 +20,7 @@
     <properties>
         <java.version>11</java.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <picocli.version>4.0.3</picocli.version>
     </properties>
 
     <dependencies>
@@ -51,6 +52,11 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>info.picocli</groupId>
+            <artifactId>picocli</artifactId>
+            <version>${picocli.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -67,6 +73,16 @@
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
                     <release>${java.version}</release>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>info.picocli</groupId>
+                            <artifactId>picocli-codegen</artifactId>
+                            <version>4.0.3</version>
+                        </path>
+                    </annotationProcessorPaths>
+                    <compilerArgs>
+                        <arg>-Aproject=${groupId}/${artifactId}</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
         </plugins>
