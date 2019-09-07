@@ -3,17 +3,25 @@ package de.meandmymac.diabetesanalytics.command;
 import java.util.concurrent.Callable;
 import de.meandmymac.diabetesanalytics.DiabetesAnalyticsApplication;
 import lombok.Getter;
-import picocli.CommandLine;
+import org.springframework.stereotype.Component;
+import picocli.CommandLine.Command;
+import picocli.CommandLine.Option;
+import picocli.CommandLine.ParentCommand;
 
-@CommandLine.Command(
+/**
+ * This class implements the command 'import'.
+ */
+@Component
+@Command(
     name = "import",
     description = "Import files with data",
-    mixinStandardHelpOptions = true)
+    mixinStandardHelpOptions = true,
+    exitCodeOnExecutionException = 128)
 public class ImportCommand implements Runnable {
-  @CommandLine.ParentCommand
-  private DiabetesAnalyticsApplication applicationCommand;
+  @ParentCommand
+  private DiabetesAnalyticsCommand applicationCommand;
 
-  @CommandLine.Option(
+  @Option(
       names = { "-i", "--import-file" },
       description = "Path to the MS Excel or CSV file",
       paramLabel = "FILEPATH",
@@ -21,7 +29,7 @@ public class ImportCommand implements Runnable {
   @Getter
   private String filepath;
 
-  @CommandLine.Option(
+  @Option(
       names = { "-m", "--attribute-mapping" },
       description = "JSON file that contains the mapping between the cells and the attributes",
       paramLabel = "ATTRIBUTE-MAPPING-FILEPATH")

@@ -7,25 +7,14 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import picocli.CommandLine;
+import picocli.CommandLine.Command;
+import picocli.CommandLine.Option;
 
 /**
  * The class with the entry point of the application.
  */
 @SpringBootApplication
-@CommandLine.Command(
-    name = "diabetes-analytics",
-    description = "Analytics for Diabetes Type-1 data",
-    subcommands = { ImportCommand.class },
-    mixinStandardHelpOptions = true,
-    version = "diabetes-analytics 0.0.1")
-public class DiabetesAnalyticsApplication implements CommandLineRunner, Callable<Integer> {
-
-  @CommandLine.Option(
-      names = {"-v", "--verbose"},
-      description = "Be verbose")
-  @Getter
-  private Boolean verbose = false;
-  private CommandLine commandLine;
+public class DiabetesAnalyticsApplication {
 
   /**
    * The entry point of application.
@@ -33,21 +22,11 @@ public class DiabetesAnalyticsApplication implements CommandLineRunner, Callable
    * @param args the input arguments
    */
   public static void main(String[] args) {
-    SpringApplication
-      .exit(
-          SpringApplication
-              .run(DiabetesAnalyticsApplication.class, args));
-  }
-
-  @Override
-  public void run(String... args) {
-    commandLine = new CommandLine(this);
-    commandLine.execute(args);
-  }
-
-  @Override
-  public Integer call() {
-    commandLine.usage(System.err);
-    return 0;
+    System
+            .exit(
+                    SpringApplication
+                            .exit(
+                                    SpringApplication
+                                            .run(DiabetesAnalyticsApplication.class, args)));
   }
 }

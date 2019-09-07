@@ -53,7 +53,7 @@
         </dependency>
         <dependency>
             <groupId>info.picocli</groupId>
-            <artifactId>picocli</artifactId>
+            <artifactId>picocli-spring-boot-starter</artifactId>
             <version>${picocli.version}</version>
         </dependency>
 
