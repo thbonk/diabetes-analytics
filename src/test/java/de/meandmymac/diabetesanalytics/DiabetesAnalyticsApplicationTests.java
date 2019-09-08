@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class DiabetesAnalyticsApplicationTests {
 
 	@Test
-	public void contextLoads() {
+	public void context_loads_is_successful() {
 	}
 
 }
