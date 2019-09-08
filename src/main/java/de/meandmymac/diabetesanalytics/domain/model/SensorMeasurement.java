@@ -10,7 +10,6 @@ import java.sql.Timestamp;
 /**
  * The class that represents a SensorMeasurement.
  */
-@Builder
 @Entity
 @DiscriminatorValue("SENSOR")
 public class SensorMeasurement extends BloodSugarMeasurement {

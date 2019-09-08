@@ -10,7 +10,6 @@ import java.sql.Timestamp;
 /**
  * The class that represent a CgmMeasurement.
  */
-@Builder
 @Entity
 @DiscriminatorValue("CGM")
 public class CgmMeasurement extends BloodSugarMeasurement {

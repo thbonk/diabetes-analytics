@@ -1,9 +1,7 @@
 package de.meandmymac.diabetesanalytics.domain.model;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Column;
@@ -26,7 +24,7 @@ public abstract class BloodSugarMeasurement {
     /**
      * Blood sugar unit mg/ml.
      */
-    public final static Byte MG_DL  = 0;
+    public final static Byte MG_DL = 0;
 
     /**
      * Blood sugar unit mmol/l.
