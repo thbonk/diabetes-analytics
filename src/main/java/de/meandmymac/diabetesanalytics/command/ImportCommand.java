@@ -2,6 +2,8 @@ package de.meandmymac.diabetesanalytics.command;
 
 import java.util.concurrent.Callable;
 import de.meandmymac.diabetesanalytics.DiabetesAnalyticsApplication;
+import de.meandmymac.diabetesanalytics.domain.model.BloodSugarMeasurement;
+import de.meandmymac.diabetesanalytics.domain.model.SensorMeasurement;
 import lombok.Getter;
 import org.springframework.stereotype.Component;
 import picocli.CommandLine.Command;
@@ -38,5 +40,6 @@ public class ImportCommand implements Runnable {
 
   @Override
   public void run() {
+
   }
 }
